@@ -1,52 +1,29 @@
-# Prerequisites
-*.d
+#include <stdio.h>
+int main() {
+  char op;
+  double first, second;
+  printf("Enter an operator (+, -, *, /): ");
+  scanf("%c", &op);
+  printf("Enter two operands: ");
+  scanf("%lf %lf", &first, &second);
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+  switch (op) {
+    case '+':
+      printf("%.1lf + %.1lf = %.1lf", first, second, first + second);
+      break;
+    case '-':
+      printf("%.1lf - %.1lf = %.1lf", first, second, first - second);
+      break;
+    case '*':
+      printf("%.1lf * %.1lf = %.1lf", first, second, first * second);
+      break;
+    case '/':
+      printf("%.1lf / %.1lf = %.1lf", first, second, first / second);
+      break;
+    // operator doesn't match any case constant
+    default:
+      printf("Error! operator is not correct");
+  }
 
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+  return 0;
+}
